@@ -1,0 +1,12 @@
+D:\Websites\PollExam\PollExam\bin\Debug\PollExam.dll
+D:\Websites\PollExam\PollExam\bin\Debug\PollExam.pdb
+D:\Websites\PollExam\PollExam\obj\Debug\PollExam.csprojResolveAssemblyReference.cache
+D:\Websites\PollExam\PollExam\obj\Debug\PollExam.dll
+D:\Websites\PollExam\PollExam\obj\Debug\PollExam.pdb
+D:\Websites\PollExam\PollExam\bin\Debug\System.Data.SqlServerCe.dll
+D:\Websites\GitHub\PollExam\PollExam\PollExam\obj\Debug\PollExam.csprojResolveAssemblyReference.cache
+D:\Websites\GitHub\PollExam\PollExam\PollExam\obj\Debug\PollExam.dll
+D:\Websites\GitHub\PollExam\PollExam\PollExam\bin\Debug\PollExam.dll
+D:\Websites\GitHub\PollExam\PollExam\PollExam\bin\Debug\PollExam.pdb
+D:\Websites\GitHub\PollExam\PollExam\PollExam\bin\Debug\System.Data.SqlServerCe.dll
+D:\Websites\GitHub\PollExam\PollExam\PollExam\obj\Debug\PollExam.pdb

@@ -1,0 +1,160 @@
+﻿@model PollExam.Web.Models.IndexFrontendModel
+
+@{
+    Layout = "~/Views/Shared/_Frontend.cshtml";
+}
+
+<div class="modal fade" id="poll-dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">@Model.Poll.Name</h4>
+            </div>
+            <div class="modal-body">
+                <p>@Model.Poll.Description</p>
+                <form role="form">
+                    <div class="alert alert-danger" id="form-alert"></div>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <div class="checkbox-list">
+                                @foreach (var option in Model.PollOptions)
+                                {
+                                    <label>
+                                        <input type="radio" name="SelectedOptionId" value="@option.Id">
+                                        @option.Description
+                                    </label>
+                                }
+                                <label>
+                                    <input type="radio" name="SelectedOptionId" value="@Guid.Empty">
+                                    Other
+                                </label>
+                                <input id="CustomOption" type="text" class="form-control" name="CustomOption" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3" for="UserName">User Name</label>
+                            <input id="UserName" type="text" class="form-control" name="UserName" value=""/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="Result" class="btn">Result</button>
+                <button id="Submit" class="btn">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="result-dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Poll Result</h4>
+            </div>
+            <div class="modal-body">
+                <div id="pie-chart"></div>
+                <div id="bar-chart"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        // define utilit methods
+        function showError(message) {
+            /// <summary>Show / hide validation message. If message is null / false, the alert bar will be hidden</summary>
+            if (!message) {
+                $('#form-alert').hide();
+            } else {
+                $('#form-alert').text(message).show();
+            }
+        }
+
+        function getSelectedOptionId() {
+            return $('[name=SelectedOptionId]:checked').val() || '@Guid.Empty';
+        }
+
+        function validate() {
+            showError(false);
+
+            // user must choice atleast one option
+            var selectedOptionId = getSelectedOptionId();
+            if (!selectedOptionId) {
+                showError('Please choice programming language');
+                return false;
+            }
+
+            // if user choices Other option, user must new enter programming language
+            if (selectedOptionId == '@Guid.Empty') {
+                var customOption = $('#CustomOption').val();
+                if (!customOption) {
+                    showError('Please enter other programming language');
+                    return false;
+                }
+            }
+
+            // user name required
+            var userName = $('#UserName').val();
+            if (!userName) {
+                showError('User name required');
+                return false;
+            }
+            return true;
+        }
+
+        function showDialog(dialogSelector) {
+            $(dialogSelector).modal({
+                backdrop: 'static',
+                keyboard: false,
+                show: true
+            });
+        }
+
+        function showResult() {
+            // hide poll dialog
+            $('#poll-dialog').modal('hide');
+
+            loadPollSummary(
+                '@Url.Action("GetPollSummary", new { pollId = Model.Poll.Id })',
+                $("#pie-chart").width(500).height(300), function() {
+                    showDialog('#result-dialog');
+                });
+        }
+
+        // prepare UI
+        showError(false);
+        showDialog('#poll-dialog');
+
+        // register event handlers
+        $('#Result').click(function() {
+            showResult();
+        });
+
+        $('#Submit').click(function () {
+            if (!validate()) return;
+
+            $.ajax({
+                url: '@Url.Action("AddVote")',
+                type: 'POST',
+                // prepare vote data
+                data: {
+                    SelectedOptionId: getSelectedOptionId(),
+                    CustomOption: $('#CustomOption').val(),
+                    PollId: '@Model.Poll.Id',
+                    UserName: $('#UserName').val()
+                },
+                success: function(result) {
+                    if (result.HasError) {
+                        showError(result.ErrorMessage);
+                    } else {
+                        showResult();
+                    }
+                }
+            });
+        });
+    });
+</script>

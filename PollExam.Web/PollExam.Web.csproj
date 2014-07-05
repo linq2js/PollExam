@@ -1,0 +1,1466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5B2BB931-672B-404C-B6FD-5813E60EAB6E}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PollExam.Web</RootNamespace>
+    <AssemblyName>PollExam.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\BackendController.cs" />
+    <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Controllers\FrontendController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AddVoteFrontendModel.cs" />
+    <Compile Include="Models\AjaxResultModel.cs" />
+    <Compile Include="Models\IndexBackendModel.cs" />
+    <Compile Include="Models\IndexFrontendModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Data\Database.sdf" />
+    <Content Include="backend-assets\css\animate.css" />
+    <Content Include="backend-assets\css\custom.css" />
+    <Content Include="backend-assets\css\pages\about-us.css" />
+    <Content Include="backend-assets\css\pages\blog.css" />
+    <Content Include="backend-assets\css\pages\coming-soon.css" />
+    <Content Include="backend-assets\css\pages\email.css" />
+    <Content Include="backend-assets\css\pages\error.css" />
+    <Content Include="backend-assets\css\pages\image-crop.css" />
+    <Content Include="backend-assets\css\pages\inbox.css" />
+    <Content Include="backend-assets\css\pages\invoice.css" />
+    <Content Include="backend-assets\css\pages\lock.css" />
+    <Content Include="backend-assets\css\pages\login-soft.css" />
+    <Content Include="backend-assets\css\pages\login.css" />
+    <Content Include="backend-assets\css\pages\news.css" />
+    <Content Include="backend-assets\css\pages\portfolio.css" />
+    <Content Include="backend-assets\css\pages\pricing-tables.css" />
+    <Content Include="backend-assets\css\pages\profile.css" />
+    <Content Include="backend-assets\css\pages\promo.css" />
+    <Content Include="backend-assets\css\pages\search.css" />
+    <Content Include="backend-assets\css\pages\tasks.css" />
+    <Content Include="backend-assets\css\pages\timeline.css" />
+    <Content Include="backend-assets\css\plugins.css" />
+    <Content Include="backend-assets\css\print.css" />
+    <Content Include="backend-assets\css\style-metronic.css" />
+    <Content Include="backend-assets\css\style-responsive.css" />
+    <Content Include="backend-assets\css\style.css" />
+    <Content Include="backend-assets\css\themes\blue.css" />
+    <Content Include="backend-assets\css\themes\brown.css" />
+    <Content Include="backend-assets\css\themes\default.css" />
+    <Content Include="backend-assets\css\themes\grey.css" />
+    <Content Include="backend-assets\css\themes\light.css" />
+    <Content Include="backend-assets\css\themes\purple.css" />
+    <Content Include="backend-assets\img\accordion-plusminus.png" />
+    <Content Include="backend-assets\img\ajax-loading.gif" />
+    <Content Include="backend-assets\img\ajax-modal-loading.gif" />
+    <Content Include="backend-assets\img\arrow-down.png" />
+    <Content Include="backend-assets\img\avatar.png" />
+    <Content Include="backend-assets\img\avatar1.jpg" />
+    <Content Include="backend-assets\img\avatar1_small.jpg" />
+    <Content Include="backend-assets\img\avatar2.jpg" />
+    <Content Include="backend-assets\img\avatar3.jpg" />
+    <Content Include="backend-assets\img\avatar3_small.jpg" />
+    <Content Include="backend-assets\img\bg-opacity.png" />
+    <Content Include="backend-assets\img\bg-white-lock.png" />
+    <Content Include="backend-assets\img\bg-white.png" />
+    <Content Include="backend-assets\img\bg\1.jpg" />
+    <Content Include="backend-assets\img\bg\2.jpg" />
+    <Content Include="backend-assets\img\bg\3.jpg" />
+    <Content Include="backend-assets\img\bg\4.jpg" />
+    <Content Include="backend-assets\img\blog\1.jpg" />
+    <Content Include="backend-assets\img\blog\10.jpg" />
+    <Content Include="backend-assets\img\blog\11.jpg" />
+    <Content Include="backend-assets\img\blog\12.jpg" />
+    <Content Include="backend-assets\img\blog\13.jpg" />
+    <Content Include="backend-assets\img\blog\14.jpg" />
+    <Content Include="backend-assets\img\blog\15.jpg" />
+    <Content Include="backend-assets\img\blog\16.jpg" />
+    <Content Include="backend-assets\img\blog\17.jpg" />
+    <Content Include="backend-assets\img\blog\18.jpg" />
+    <Content Include="backend-assets\img\blog\19.jpg" />
+    <Content Include="backend-assets\img\blog\2.jpg" />
+    <Content Include="backend-assets\img\blog\20.jpg" />
+    <Content Include="backend-assets\img\blog\3.jpg" />
+    <Content Include="backend-assets\img\blog\4.jpg" />
+    <Content Include="backend-assets\img\blog\5.jpg" />
+    <Content Include="backend-assets\img\blog\6.jpg" />
+    <Content Include="backend-assets\img\blog\7.jpg" />
+    <Content Include="backend-assets\img\blog\8.jpg" />
+    <Content Include="backend-assets\img\blog\9.jpg" />
+    <Content Include="backend-assets\img\datatable-row-openclose.png" />
+    <Content Include="backend-assets\img\email\article.png" />
+    <Content Include="backend-assets\img\email\iphone.png" />
+    <Content Include="backend-assets\img\email\iphone_left.png" />
+    <Content Include="backend-assets\img\email\iphone_right.png" />
+    <Content Include="backend-assets\img\email\logo.png" />
+    <Content Include="backend-assets\img\email\photo1.jpg" />
+    <Content Include="backend-assets\img\email\photo2.jpg" />
+    <Content Include="backend-assets\img\email\photo3.jpg" />
+    <Content Include="backend-assets\img\email\photo4.jpg" />
+    <Content Include="backend-assets\img\email\photo5.jpg" />
+    <Content Include="backend-assets\img\email\photo6.jpg" />
+    <Content Include="backend-assets\img\email\social_facebook.png" />
+    <Content Include="backend-assets\img\email\social_googleplus.png" />
+    <Content Include="backend-assets\img\email\social_linkedin.png" />
+    <Content Include="backend-assets\img\email\social_rss.png" />
+    <Content Include="backend-assets\img\email\social_twitter.png" />
+    <Content Include="backend-assets\img\flags\ad.png" />
+    <Content Include="backend-assets\img\flags\ae.png" />
+    <Content Include="backend-assets\img\flags\af.png" />
+    <Content Include="backend-assets\img\flags\ag.png" />
+    <Content Include="backend-assets\img\flags\ai.png" />
+    <Content Include="backend-assets\img\flags\al.png" />
+    <Content Include="backend-assets\img\flags\am.png" />
+    <Content Include="backend-assets\img\flags\an.png" />
+    <Content Include="backend-assets\img\flags\ao.png" />
+    <Content Include="backend-assets\img\flags\ar.png" />
+    <Content Include="backend-assets\img\flags\as.png" />
+    <Content Include="backend-assets\img\flags\at.png" />
+    <Content Include="backend-assets\img\flags\au.png" />
+    <Content Include="backend-assets\img\flags\aw.png" />
+    <Content Include="backend-assets\img\flags\ax.png" />
+    <Content Include="backend-assets\img\flags\az.png" />
+    <Content Include="backend-assets\img\flags\ba.png" />
+    <Content Include="backend-assets\img\flags\bb.png" />
+    <Content Include="backend-assets\img\flags\bd.png" />
+    <Content Include="backend-assets\img\flags\be.png" />
+    <Content Include="backend-assets\img\flags\bf.png" />
+    <Content Include="backend-assets\img\flags\bg.png" />
+    <Content Include="backend-assets\img\flags\bh.png" />
+    <Content Include="backend-assets\img\flags\bi.png" />
+    <Content Include="backend-assets\img\flags\bj.png" />
+    <Content Include="backend-assets\img\flags\bm.png" />
+    <Content Include="backend-assets\img\flags\bn.png" />
+    <Content Include="backend-assets\img\flags\bo.png" />
+    <Content Include="backend-assets\img\flags\br.png" />
+    <Content Include="backend-assets\img\flags\bs.png" />
+    <Content Include="backend-assets\img\flags\bt.png" />
+    <Content Include="backend-assets\img\flags\bv.png" />
+    <Content Include="backend-assets\img\flags\bw.png" />
+    <Content Include="backend-assets\img\flags\by.png" />
+    <Content Include="backend-assets\img\flags\bz.png" />
+    <Content Include="backend-assets\img\flags\ca.png" />
+    <Content Include="backend-assets\img\flags\catalonia.png" />
+    <Content Include="backend-assets\img\flags\cc.png" />
+    <Content Include="backend-assets\img\flags\cd.png" />
+    <Content Include="backend-assets\img\flags\cf.png" />
+    <Content Include="backend-assets\img\flags\cg.png" />
+    <Content Include="backend-assets\img\flags\ch.png" />
+    <Content Include="backend-assets\img\flags\ci.png" />
+    <Content Include="backend-assets\img\flags\ck.png" />
+    <Content Include="backend-assets\img\flags\cl.png" />
+    <Content Include="backend-assets\img\flags\cm.png" />
+    <Content Include="backend-assets\img\flags\cn.png" />
+    <Content Include="backend-assets\img\flags\co.png" />
+    <Content Include="backend-assets\img\flags\cr.png" />
+    <Content Include="backend-assets\img\flags\cs.png" />
+    <Content Include="backend-assets\img\flags\cu.png" />
+    <Content Include="backend-assets\img\flags\cv.png" />
+    <Content Include="backend-assets\img\flags\cx.png" />
+    <Content Include="backend-assets\img\flags\cy.png" />
+    <Content Include="backend-assets\img\flags\cz.png" />
+    <Content Include="backend-assets\img\flags\de.png" />
+    <Content Include="backend-assets\img\flags\dj.png" />
+    <Content Include="backend-assets\img\flags\dk.png" />
+    <Content Include="backend-assets\img\flags\dm.png" />
+    <Content Include="backend-assets\img\flags\do.png" />
+    <Content Include="backend-assets\img\flags\dz.png" />
+    <Content Include="backend-assets\img\flags\ec.png" />
+    <Content Include="backend-assets\img\flags\ee.png" />
+    <Content Include="backend-assets\img\flags\eg.png" />
+    <Content Include="backend-assets\img\flags\eh.png" />
+    <Content Include="backend-assets\img\flags\england.png" />
+    <Content Include="backend-assets\img\flags\er.png" />
+    <Content Include="backend-assets\img\flags\es.png" />
+    <Content Include="backend-assets\img\flags\et.png" />
+    <Content Include="backend-assets\img\flags\europeanunion.png" />
+    <Content Include="backend-assets\img\flags\fam.png" />
+    <Content Include="backend-assets\img\flags\fi.png" />
+    <Content Include="backend-assets\img\flags\fj.png" />
+    <Content Include="backend-assets\img\flags\fk.png" />
+    <Content Include="backend-assets\img\flags\fm.png" />
+    <Content Include="backend-assets\img\flags\fo.png" />
+    <Content Include="backend-assets\img\flags\fr.png" />
+    <Content Include="backend-assets\img\flags\ga.png" />
+    <Content Include="backend-assets\img\flags\gb.png" />
+    <Content Include="backend-assets\img\flags\gd.png" />
+    <Content Include="backend-assets\img\flags\ge.png" />
+    <Content Include="backend-assets\img\flags\gf.png" />
+    <Content Include="backend-assets\img\flags\gh.png" />
+    <Content Include="backend-assets\img\flags\gi.png" />
+    <Content Include="backend-assets\img\flags\gl.png" />
+    <Content Include="backend-assets\img\flags\gm.png" />
+    <Content Include="backend-assets\img\flags\gn.png" />
+    <Content Include="backend-assets\img\flags\gp.png" />
+    <Content Include="backend-assets\img\flags\gq.png" />
+    <Content Include="backend-assets\img\flags\gr.png" />
+    <Content Include="backend-assets\img\flags\gs.png" />
+    <Content Include="backend-assets\img\flags\gt.png" />
+    <Content Include="backend-assets\img\flags\gu.png" />
+    <Content Include="backend-assets\img\flags\gw.png" />
+    <Content Include="backend-assets\img\flags\gy.png" />
+    <Content Include="backend-assets\img\flags\hk.png" />
+    <Content Include="backend-assets\img\flags\hm.png" />
+    <Content Include="backend-assets\img\flags\hn.png" />
+    <Content Include="backend-assets\img\flags\hr.png" />
+    <Content Include="backend-assets\img\flags\ht.png" />
+    <Content Include="backend-assets\img\flags\hu.png" />
+    <Content Include="backend-assets\img\flags\id.png" />
+    <Content Include="backend-assets\img\flags\ie.png" />
+    <Content Include="backend-assets\img\flags\il.png" />
+    <Content Include="backend-assets\img\flags\in.png" />
+    <Content Include="backend-assets\img\flags\io.png" />
+    <Content Include="backend-assets\img\flags\iq.png" />
+    <Content Include="backend-assets\img\flags\ir.png" />
+    <Content Include="backend-assets\img\flags\is.png" />
+    <Content Include="backend-assets\img\flags\it.png" />
+    <Content Include="backend-assets\img\flags\jm.png" />
+    <Content Include="backend-assets\img\flags\jo.png" />
+    <Content Include="backend-assets\img\flags\jp.png" />
+    <Content Include="backend-assets\img\flags\ke.png" />
+    <Content Include="backend-assets\img\flags\kg.png" />
+    <Content Include="backend-assets\img\flags\kh.png" />
+    <Content Include="backend-assets\img\flags\ki.png" />
+    <Content Include="backend-assets\img\flags\km.png" />
+    <Content Include="backend-assets\img\flags\kn.png" />
+    <Content Include="backend-assets\img\flags\kp.png" />
+    <Content Include="backend-assets\img\flags\kr.png" />
+    <Content Include="backend-assets\img\flags\kw.png" />
+    <Content Include="backend-assets\img\flags\ky.png" />
+    <Content Include="backend-assets\img\flags\kz.png" />
+    <Content Include="backend-assets\img\flags\la.png" />
+    <Content Include="backend-assets\img\flags\lb.png" />
+    <Content Include="backend-assets\img\flags\lc.png" />
+    <Content Include="backend-assets\img\flags\li.png" />
+    <Content Include="backend-assets\img\flags\lk.png" />
+    <Content Include="backend-assets\img\flags\lr.png" />
+    <Content Include="backend-assets\img\flags\ls.png" />
+    <Content Include="backend-assets\img\flags\lt.png" />
+    <Content Include="backend-assets\img\flags\lu.png" />
+    <Content Include="backend-assets\img\flags\lv.png" />
+    <Content Include="backend-assets\img\flags\ly.png" />
+    <Content Include="backend-assets\img\flags\ma.png" />
+    <Content Include="backend-assets\img\flags\mc.png" />
+    <Content Include="backend-assets\img\flags\md.png" />
+    <Content Include="backend-assets\img\flags\me.png" />
+    <Content Include="backend-assets\img\flags\mg.png" />
+    <Content Include="backend-assets\img\flags\mh.png" />
+    <Content Include="backend-assets\img\flags\mk.png" />
+    <Content Include="backend-assets\img\flags\ml.png" />
+    <Content Include="backend-assets\img\flags\mm.png" />
+    <Content Include="backend-assets\img\flags\mn.png" />
+    <Content Include="backend-assets\img\flags\mo.png" />
+    <Content Include="backend-assets\img\flags\mp.png" />
+    <Content Include="backend-assets\img\flags\mq.png" />
+    <Content Include="backend-assets\img\flags\mr.png" />
+    <Content Include="backend-assets\img\flags\ms.png" />
+    <Content Include="backend-assets\img\flags\mt.png" />
+    <Content Include="backend-assets\img\flags\mu.png" />
+    <Content Include="backend-assets\img\flags\mv.png" />
+    <Content Include="backend-assets\img\flags\mw.png" />
+    <Content Include="backend-assets\img\flags\mx.png" />
+    <Content Include="backend-assets\img\flags\my.png" />
+    <Content Include="backend-assets\img\flags\mz.png" />
+    <Content Include="backend-assets\img\flags\na.png" />
+    <Content Include="backend-assets\img\flags\nc.png" />
+    <Content Include="backend-assets\img\flags\ne.png" />
+    <Content Include="backend-assets\img\flags\nf.png" />
+    <Content Include="backend-assets\img\flags\ng.png" />
+    <Content Include="backend-assets\img\flags\ni.png" />
+    <Content Include="backend-assets\img\flags\nl.png" />
+    <Content Include="backend-assets\img\flags\no.png" />
+    <Content Include="backend-assets\img\flags\np.png" />
+    <Content Include="backend-assets\img\flags\nr.png" />
+    <Content Include="backend-assets\img\flags\nu.png" />
+    <Content Include="backend-assets\img\flags\nz.png" />
+    <Content Include="backend-assets\img\flags\om.png" />
+    <Content Include="backend-assets\img\flags\pa.png" />
+    <Content Include="backend-assets\img\flags\pe.png" />
+    <Content Include="backend-assets\img\flags\pf.png" />
+    <Content Include="backend-assets\img\flags\pg.png" />
+    <Content Include="backend-assets\img\flags\ph.png" />
+    <Content Include="backend-assets\img\flags\pk.png" />
+    <Content Include="backend-assets\img\flags\pl.png" />
+    <Content Include="backend-assets\img\flags\pm.png" />
+    <Content Include="backend-assets\img\flags\pn.png" />
+    <Content Include="backend-assets\img\flags\pr.png" />
+    <Content Include="backend-assets\img\flags\ps.png" />
+    <Content Include="backend-assets\img\flags\pt.png" />
+    <Content Include="backend-assets\img\flags\pw.png" />
+    <Content Include="backend-assets\img\flags\py.png" />
+    <Content Include="backend-assets\img\flags\qa.png" />
+    <Content Include="backend-assets\img\flags\re.png" />
+    <Content Include="backend-assets\img\flags\readme.txt" />
+    <Content Include="backend-assets\img\flags\ro.png" />
+    <Content Include="backend-assets\img\flags\rs.png" />
+    <Content Include="backend-assets\img\flags\ru.png" />
+    <Content Include="backend-assets\img\flags\rw.png" />
+    <Content Include="backend-assets\img\flags\sa.png" />
+    <Content Include="backend-assets\img\flags\sb.png" />
+    <Content Include="backend-assets\img\flags\sc.png" />
+    <Content Include="backend-assets\img\flags\scotland.png" />
+    <Content Include="backend-assets\img\flags\sd.png" />
+    <Content Include="backend-assets\img\flags\se.png" />
+    <Content Include="backend-assets\img\flags\sg.png" />
+    <Content Include="backend-assets\img\flags\sh.png" />
+    <Content Include="backend-assets\img\flags\si.png" />
+    <Content Include="backend-assets\img\flags\sj.png" />
+    <Content Include="backend-assets\img\flags\sk.png" />
+    <Content Include="backend-assets\img\flags\sl.png" />
+    <Content Include="backend-assets\img\flags\sm.png" />
+    <Content Include="backend-assets\img\flags\sn.png" />
+    <Content Include="backend-assets\img\flags\so.png" />
+    <Content Include="backend-assets\img\flags\sr.png" />
+    <Content Include="backend-assets\img\flags\st.png" />
+    <Content Include="backend-assets\img\flags\sv.png" />
+    <Content Include="backend-assets\img\flags\sy.png" />
+    <Content Include="backend-assets\img\flags\sz.png" />
+    <Content Include="backend-assets\img\flags\tc.png" />
+    <Content Include="backend-assets\img\flags\td.png" />
+    <Content Include="backend-assets\img\flags\tf.png" />
+    <Content Include="backend-assets\img\flags\tg.png" />
+    <Content Include="backend-assets\img\flags\th.png" />
+    <Content Include="backend-assets\img\flags\tj.png" />
+    <Content Include="backend-assets\img\flags\tk.png" />
+    <Content Include="backend-assets\img\flags\tl.png" />
+    <Content Include="backend-assets\img\flags\tm.png" />
+    <Content Include="backend-assets\img\flags\tn.png" />
+    <Content Include="backend-assets\img\flags\to.png" />
+    <Content Include="backend-assets\img\flags\tr.png" />
+    <Content Include="backend-assets\img\flags\tt.png" />
+    <Content Include="backend-assets\img\flags\tv.png" />
+    <Content Include="backend-assets\img\flags\tw.png" />
+    <Content Include="backend-assets\img\flags\tz.png" />
+    <Content Include="backend-assets\img\flags\ua.png" />
+    <Content Include="backend-assets\img\flags\ug.png" />
+    <Content Include="backend-assets\img\flags\um.png" />
+    <Content Include="backend-assets\img\flags\us.png" />
+    <Content Include="backend-assets\img\flags\uy.png" />
+    <Content Include="backend-assets\img\flags\uz.png" />
+    <Content Include="backend-assets\img\flags\va.png" />
+    <Content Include="backend-assets\img\flags\vc.png" />
+    <Content Include="backend-assets\img\flags\ve.png" />
+    <Content Include="backend-assets\img\flags\vg.png" />
+    <Content Include="backend-assets\img\flags\vi.png" />
+    <Content Include="backend-assets\img\flags\vn.png" />
+    <Content Include="backend-assets\img\flags\vu.png" />
+    <Content Include="backend-assets\img\flags\wales.png" />
+    <Content Include="backend-assets\img\flags\wf.png" />
+    <Content Include="backend-assets\img\flags\ws.png" />
+    <Content Include="backend-assets\img\flags\ye.png" />
+    <Content Include="backend-assets\img\flags\yt.png" />
+    <Content Include="backend-assets\img\flags\za.png" />
+    <Content Include="backend-assets\img\flags\zm.png" />
+    <Content Include="backend-assets\img\flags\zw.png" />
+    <Content Include="backend-assets\img\gallery\image1.jpg" />
+    <Content Include="backend-assets\img\gallery\image2.jpg" />
+    <Content Include="backend-assets\img\gallery\image3.jpg" />
+    <Content Include="backend-assets\img\gallery\image4.jpg" />
+    <Content Include="backend-assets\img\gallery\image5.jpg" />
+    <Content Include="backend-assets\img\gallery\item_img.jpg" />
+    <Content Include="backend-assets\img\gallery\item_img1.jpg" />
+    <Content Include="backend-assets\img\gallery\preview_02.png" />
+    <Content Include="backend-assets\img\gallery\preview_03.png" />
+    <Content Include="backend-assets\img\gallery\preview_04.png" />
+    <Content Include="backend-assets\img\gallery\preview_05.png" />
+    <Content Include="backend-assets\img\gallery\preview_06.png" />
+    <Content Include="backend-assets\img\gallery\preview_07.png" />
+    <Content Include="backend-assets\img\gallery\preview_08.png" />
+    <Content Include="backend-assets\img\gallery\preview_09.png" />
+    <Content Include="backend-assets\img\gallery\preview_10.png" />
+    <Content Include="backend-assets\img\gallery\preview_11.png" />
+    <Content Include="backend-assets\img\gallery\preview_12.png" />
+    <Content Include="backend-assets\img\gallery\preview_13.png" />
+    <Content Include="backend-assets\img\gallery\preview_14.png" />
+    <Content Include="backend-assets\img\gallery\preview_15.png" />
+    <Content Include="backend-assets\img\gallery\preview_16.png" />
+    <Content Include="backend-assets\img\gallery\preview_17.png" />
+    <Content Include="backend-assets\img\gallery\preview_18.png" />
+    <Content Include="backend-assets\img\hor-menu-red-arrow.png" />
+    <Content Include="backend-assets\img\hor-menu-search-close-white.png" />
+    <Content Include="backend-assets\img\hor-menu-search-close.png" />
+    <Content Include="backend-assets\img\hor-menu-search.jpg" />
+    <Content Include="backend-assets\img\hor-menu-search.png" />
+    <Content Include="backend-assets\img\icon-color-close.png" />
+    <Content Include="backend-assets\img\icon-color.png" />
+    <Content Include="backend-assets\img\icon-img-down.png" />
+    <Content Include="backend-assets\img\icon-img-up.png" />
+    <Content Include="backend-assets\img\inbox-nav-arrow-blue.png" />
+    <Content Include="backend-assets\img\input-spinner.gif" />
+    <Content Include="backend-assets\img\invoice\walmart.png" />
+    <Content Include="backend-assets\img\loading-spinner-blue.gif" />
+    <Content Include="backend-assets\img\loading-spinner-default.gif" />
+    <Content Include="backend-assets\img\loading-spinner-grey.gif" />
+    <Content Include="backend-assets\img\loading.gif" />
+    <Content Include="backend-assets\img\logo-big.png" />
+    <Content Include="backend-assets\img\logo.png" />
+    <Content Include="backend-assets\img\menu-toggler.png" />
+    <Content Include="backend-assets\img\overlay-icon.png" />
+    <Content Include="backend-assets\img\pages\2.jpg" />
+    <Content Include="backend-assets\img\pages\3.jpg" />
+    <Content Include="backend-assets\img\pages\earth.jpg" />
+    <Content Include="backend-assets\img\pages\img.png" />
+    <Content Include="backend-assets\img\pages\img1.png" />
+    <Content Include="backend-assets\img\pages\img1_2.png" />
+    <Content Include="backend-assets\img\pages\img2.png" />
+    <Content Include="backend-assets\img\pages\img3.jpg" />
+    <Content Include="backend-assets\img\pages\img3.png" />
+    <Content Include="backend-assets\img\pages\img4.png" />
+    <Content Include="backend-assets\img\photo1.jpg" />
+    <Content Include="backend-assets\img\photo2.jpg" />
+    <Content Include="backend-assets\img\portlet-collapse-icon-white.png" />
+    <Content Include="backend-assets\img\portlet-collapse-icon.png" />
+    <Content Include="backend-assets\img\portlet-config-icon-white.png" />
+    <Content Include="backend-assets\img\portlet-config-icon.png" />
+    <Content Include="backend-assets\img\portlet-expand-icon-white.png" />
+    <Content Include="backend-assets\img\portlet-expand-icon.png" />
+    <Content Include="backend-assets\img\portlet-reload-icon-white.png" />
+    <Content Include="backend-assets\img\portlet-reload-icon.png" />
+    <Content Include="backend-assets\img\portlet-remove-icon-white.png" />
+    <Content Include="backend-assets\img\portlet-remove-icon.png" />
+    <Content Include="backend-assets\img\profile\portfolio\logo_azteca.jpg" />
+    <Content Include="backend-assets\img\profile\portfolio\logo_conquer.jpg" />
+    <Content Include="backend-assets\img\profile\portfolio\logo_metronic.jpg" />
+    <Content Include="backend-assets\img\profile\profile-img.jpg" />
+    <Content Include="backend-assets\img\profile\profile-img.png" />
+    <Content Include="backend-assets\img\profile\profile.jpg" />
+    <Content Include="backend-assets\img\remove-icon-small.png" />
+    <Content Include="backend-assets\img\search-icon-blue.png" />
+    <Content Include="backend-assets\img\search-icon-brown.png" />
+    <Content Include="backend-assets\img\search-icon-light.png" />
+    <Content Include="backend-assets\img\search-icon-purple.png" />
+    <Content Include="backend-assets\img\search-icon-red.png" />
+    <Content Include="backend-assets\img\search-icon-white.png" />
+    <Content Include="backend-assets\img\search-icon.png" />
+    <Content Include="backend-assets\img\search\1.jpg" />
+    <Content Include="backend-assets\img\search\2.jpg" />
+    <Content Include="backend-assets\img\search\img1.jpg" />
+    <Content Include="backend-assets\img\search\img2.jpg" />
+    <Content Include="backend-assets\img\search\img3.jpg" />
+    <Content Include="backend-assets\img\select-caret.png" />
+    <Content Include="backend-assets\img\sidebar-menu-arrow-green-reverse.png" />
+    <Content Include="backend-assets\img\sidebar-menu-arrow-green.png" />
+    <Content Include="backend-assets\img\sidebar-menu-arrow-reverse.png" />
+    <Content Include="backend-assets\img\sidebar-menu-arrow-right.png" />
+    <Content Include="backend-assets\img\sidebar-menu-arrow.png" />
+    <Content Include="backend-assets\img\sidebar-search-close-blue.png" />
+    <Content Include="backend-assets\img\sidebar-search-close-brown.png" />
+    <Content Include="backend-assets\img\sidebar-search-close-light.png" />
+    <Content Include="backend-assets\img\sidebar-search-close-purple.png" />
+    <Content Include="backend-assets\img\sidebar-search-close.png" />
+    <Content Include="backend-assets\img\sidebar-toggler-blue.jpg" />
+    <Content Include="backend-assets\img\sidebar-toggler-brown.jpg" />
+    <Content Include="backend-assets\img\sidebar-toggler-light.jpg" />
+    <Content Include="backend-assets\img\sidebar-toggler-purple.jpg" />
+    <Content Include="backend-assets\img\sidebar-toggler.jpg" />
+    <Content Include="backend-assets\img\sidebar-toggler.png" />
+    <Content Include="backend-assets\img\social\aboutme.png" />
+    <Content Include="backend-assets\img\social\amazon.png" />
+    <Content Include="backend-assets\img\social\behance.png" />
+    <Content Include="backend-assets\img\social\blogger.png" />
+    <Content Include="backend-assets\img\social\deviantart.png" />
+    <Content Include="backend-assets\img\social\dribbble.png" />
+    <Content Include="backend-assets\img\social\dropbox.png" />
+    <Content Include="backend-assets\img\social\evernote.png" />
+    <Content Include="backend-assets\img\social\facebook.png" />
+    <Content Include="backend-assets\img\social\flickr.png" />
+    <Content Include="backend-assets\img\social\forrst.png" />
+    <Content Include="backend-assets\img\social\foursquare.png" />
+    <Content Include="backend-assets\img\social\github.png" />
+    <Content Include="backend-assets\img\social\googleplus.png" />
+    <Content Include="backend-assets\img\social\gravatar.png" />
+    <Content Include="backend-assets\img\social\instagram.png" />
+    <Content Include="backend-assets\img\social\jolicloud.png" />
+    <Content Include="backend-assets\img\social\klout.png" />
+    <Content Include="backend-assets\img\social\last-fm.png" />
+    <Content Include="backend-assets\img\social\linkedin.png" />
+    <Content Include="backend-assets\img\social\myspace.png" />
+    <Content Include="backend-assets\img\social\picasa.png" />
+    <Content Include="backend-assets\img\social\pintrest.png" />
+    <Content Include="backend-assets\img\social\quora.png" />
+    <Content Include="backend-assets\img\social\reddit.png" />
+    <Content Include="backend-assets\img\social\rss.png" />
+    <Content Include="backend-assets\img\social\skype.png" />
+    <Content Include="backend-assets\img\social\spotify.png" />
+    <Content Include="backend-assets\img\social\stumbleupon.png" />
+    <Content Include="backend-assets\img\social\tumblr.png" />
+    <Content Include="backend-assets\img\social\twitter.png" />
+    <Content Include="backend-assets\img\social\vimeo.png" />
+    <Content Include="backend-assets\img\social\vk.png" />
+    <Content Include="backend-assets\img\social\wordpress.png" />
+    <Content Include="backend-assets\img\social\xing.png" />
+    <Content Include="backend-assets\img\social\yahoo.png" />
+    <Content Include="backend-assets\img\social\youtube.png" />
+    <Content Include="backend-assets\img\syncfusion-icons-white.png" />
+    <Content Include="backend-assets\img\syncfusion-icons.png" />
+    <Content Include="backend-assets\img\works\img1.jpg" />
+    <Content Include="backend-assets\img\works\img2.jpg" />
+    <Content Include="backend-assets\img\works\img3.jpg" />
+    <Content Include="backend-assets\img\works\img4.jpg" />
+    <Content Include="backend-assets\img\works\img5.jpg" />
+    <Content Include="backend-assets\img\works\img6.jpg" />
+    <Content Include="backend-assets\plugins\bootstrap-hover-dropdown\bootstrap-hover-dropdown.js" />
+    <Content Include="backend-assets\plugins\bootstrap-hover-dropdown\bootstrap-hover-dropdown.min.js" />
+    <Content Include="backend-assets\plugins\bootstrap-hover-dropdown\demo.html" />
+    <Content Include="backend-assets\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="backend-assets\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="backend-assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="backend-assets\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="backend-assets\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="backend-assets\plugins\bootstrap\js\bootstrap2-typeahead.js" />
+    <Content Include="backend-assets\plugins\bootstrap\js\bootstrap2-typeahead.min.js" />
+    <Content Include="backend-assets\plugins\excanvas.min.js" />
+    <Content Include="backend-assets\plugins\flot\examples\ajax\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\annotating\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\axes-interacting\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\axes-multiple\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\date.js" />
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\axes-time\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\background.png" />
+    <Content Include="backend-assets\plugins\flot\examples\basic-options\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\basic-usage\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\canvas\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\categories\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\examples.css" />
+    <Content Include="backend-assets\plugins\flot\examples\image\hs-2004-27-a-large-web.jpg" />
+    <Content Include="backend-assets\plugins\flot\examples\image\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\interacting\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\navigate\arrow-down.gif" />
+    <Content Include="backend-assets\plugins\flot\examples\navigate\arrow-left.gif" />
+    <Content Include="backend-assets\plugins\flot\examples\navigate\arrow-right.gif" />
+    <Content Include="backend-assets\plugins\flot\examples\navigate\arrow-up.gif" />
+    <Content Include="backend-assets\plugins\flot\examples\navigate\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\percentiles\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\realtime\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\resize\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\selection\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\series-errorbars\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\series-pie\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\series-toggle\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\series-types\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\shared\jquery-ui\jquery-ui.min.css" />
+    <Content Include="backend-assets\plugins\flot\examples\shared\jquery-ui\jquery-ui.min.js" />
+    <Content Include="backend-assets\plugins\flot\examples\stacking\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\symbols\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\threshold\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\tracking\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\visitors\index.html" />
+    <Content Include="backend-assets\plugins\flot\examples\zooming\index.html" />
+    <Content Include="backend-assets\plugins\flot\excanvas.js" />
+    <Content Include="backend-assets\plugins\flot\excanvas.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.colorhelpers.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.colorhelpers.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.canvas.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.canvas.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.categories.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.categories.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.crosshair.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.errorbars.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.errorbars.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.fillbetween.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.image.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.image.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.navigate.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.navigate.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.pie.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.resize.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.selection.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.selection.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.stack.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.stack.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.symbol.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.threshold.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.threshold.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.time.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.flot.time.min.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.js" />
+    <Content Include="backend-assets\plugins\flot\jquery.min.js" />
+    <Content Include="backend-assets\plugins\flot\LICENSE.txt" />
+    <Content Include="backend-assets\plugins\font-awesome\css\font-awesome.css" />
+    <Content Include="backend-assets\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="backend-assets\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="backend-assets\plugins\jquery-1.10.2.min.js" />
+    <Content Include="backend-assets\plugins\jquery-migrate-1.2.1.min.js" />
+    <Content Include="backend-assets\plugins\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="backend-assets\plugins\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="backend-assets\plugins\jquery.blockui.min.js" />
+    <Content Include="backend-assets\plugins\jquery.cokie.min.js" />
+    <Content Include="backend-assets\plugins\respond.min.js" />
+    <Content Include="backend-assets\plugins\uniform\css\uniform.default.css" />
+    <Content Include="backend-assets\plugins\uniform\css\uniform.default.min.css" />
+    <Content Include="backend-assets\plugins\uniform\images\bg-input-focus.png" />
+    <Content Include="backend-assets\plugins\uniform\images\bg-input.png" />
+    <Content Include="backend-assets\plugins\uniform\images\sprite.png" />
+    <Content Include="backend-assets\plugins\uniform\images\sprite_original.png" />
+    <Content Include="backend-assets\plugins\uniform\jquery.uniform.js" />
+    <Content Include="backend-assets\plugins\uniform\jquery.uniform.min.js" />
+    <Content Include="backend-assets\scripts\core\app.js" />
+    <Content Include="backend-assets\scripts\core\datatable.js" />
+    <Content Include="frontend-assets\css\custom.css" />
+    <Content Include="frontend-assets\css\style-metronic.css" />
+    <Content Include="frontend-assets\css\style-responsive.css" />
+    <Content Include="frontend-assets\css\style.css" />
+    <Content Include="frontend-assets\img\bx-fa-angles.png" />
+    <Content Include="frontend-assets\img\fa-angle-brands.png" />
+    <Content Include="frontend-assets\img\fa-angle-down-langs.png" />
+    <Content Include="frontend-assets\img\icons\del-goods.png" />
+    <Content Include="frontend-assets\img\icons\search-icon.png" />
+    <Content Include="frontend-assets\img\icons\shop-cart-icon.png" />
+    <Content Include="frontend-assets\img\icons\sidebar-toggle-icons.png" />
+    <Content Include="frontend-assets\img\icons\social\aboutme.png" />
+    <Content Include="frontend-assets\img\icons\social\amazon.png" />
+    <Content Include="frontend-assets\img\icons\social\behance.png" />
+    <Content Include="frontend-assets\img\icons\social\blogger.png" />
+    <Content Include="frontend-assets\img\icons\social\deviantart.png" />
+    <Content Include="frontend-assets\img\icons\social\dribbble.png" />
+    <Content Include="frontend-assets\img\icons\social\dropbox.png" />
+    <Content Include="frontend-assets\img\icons\social\evernote.png" />
+    <Content Include="frontend-assets\img\icons\social\facebook.png" />
+    <Content Include="frontend-assets\img\icons\social\flickr.png" />
+    <Content Include="frontend-assets\img\icons\social\forrst.png" />
+    <Content Include="frontend-assets\img\icons\social\foursquare.png" />
+    <Content Include="frontend-assets\img\icons\social\github.png" />
+    <Content Include="frontend-assets\img\icons\social\googleplus.png" />
+    <Content Include="frontend-assets\img\icons\social\gravatar.png" />
+    <Content Include="frontend-assets\img\icons\social\instagram.png" />
+    <Content Include="frontend-assets\img\icons\social\jolicloud.png" />
+    <Content Include="frontend-assets\img\icons\social\klout.png" />
+    <Content Include="frontend-assets\img\icons\social\last-fm.png" />
+    <Content Include="frontend-assets\img\icons\social\linkedin.png" />
+    <Content Include="frontend-assets\img\icons\social\myspace.png" />
+    <Content Include="frontend-assets\img\icons\social\picasa.png" />
+    <Content Include="frontend-assets\img\icons\social\pintrest.png" />
+    <Content Include="frontend-assets\img\icons\social\quora.png" />
+    <Content Include="frontend-assets\img\icons\social\reddit.png" />
+    <Content Include="frontend-assets\img\icons\social\rss.png" />
+    <Content Include="frontend-assets\img\icons\social\skype.png" />
+    <Content Include="frontend-assets\img\icons\social\spotify.png" />
+    <Content Include="frontend-assets\img\icons\social\stumbleupon.png" />
+    <Content Include="frontend-assets\img\icons\social\tumblr.png" />
+    <Content Include="frontend-assets\img\icons\social\twitter.png" />
+    <Content Include="frontend-assets\img\icons\social\vimeo.png" />
+    <Content Include="frontend-assets\img\icons\social\vk.png" />
+    <Content Include="frontend-assets\img\icons\social\wordpress.png" />
+    <Content Include="frontend-assets\img\icons\social\xing.png" />
+    <Content Include="frontend-assets\img\icons\social\yahoo.png" />
+    <Content Include="frontend-assets\img\icons\social\youtube.png" />
+    <Content Include="frontend-assets\img\icons\top-search-icon.png" />
+    <Content Include="frontend-assets\img\layerslider-arrows.png" />
+    <Content Include="frontend-assets\img\logo_red.png" />
+    <Content Include="frontend-assets\img\new.png" />
+    <Content Include="frontend-assets\img\payments\american-express.jpg" />
+    <Content Include="frontend-assets\img\payments\fa-angle-right-info.png" />
+    <Content Include="frontend-assets\img\payments\MasterCard.jpg" />
+    <Content Include="frontend-assets\img\payments\PayPal.jpg" />
+    <Content Include="frontend-assets\img\payments\visa.jpg" />
+    <Content Include="frontend-assets\img\payments\western-union.jpg" />
+    <Content Include="frontend-assets\img\sale.png" />
+    <Content Include="frontend-assets\img\step3-angle-right.png" />
+    <Content Include="frontend-assets\img\up.png" />
+    <Content Include="frontend-assets\plugins\back-to-top.js" />
+    <Content Include="frontend-assets\plugins\bootstrap-touchspin\bootstrap.touchspin.js" />
+    <Content Include="frontend-assets\plugins\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="frontend-assets\plugins\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="frontend-assets\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="frontend-assets\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="frontend-assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="frontend-assets\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="frontend-assets\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="frontend-assets\plugins\bxslider\images\bx_loader.gif" />
+    <Content Include="frontend-assets\plugins\bxslider\images\left-hover.png" />
+    <Content Include="frontend-assets\plugins\bxslider\images\left.png" />
+    <Content Include="frontend-assets\plugins\bxslider\images\right-hover.png" />
+    <Content Include="frontend-assets\plugins\bxslider\images\right.png" />
+    <Content Include="frontend-assets\plugins\bxslider\jquery.bxslider.css" />
+    <Content Include="frontend-assets\plugins\bxslider\jquery.bxslider.js" />
+    <Content Include="frontend-assets\plugins\bxslider\jquery.bxslider.min.js" />
+    <Content Include="frontend-assets\plugins\fancybox\CHANGELOG.txt" />
+    <Content Include="frontend-assets\plugins\fancybox\demo\1_b.jpg" />
+    <Content Include="frontend-assets\plugins\fancybox\demo\1_s.jpg" />
+    <Content Include="frontend-assets\plugins\fancybox\demo\2_b.jpg" />
+    <Content Include="frontend-assets\plugins\fancybox\demo\2_s.jpg" />
+    <Content Include="frontend-assets\plugins\fancybox\demo\3_b.jpg" />
+    <Content Include="frontend-assets\plugins\fancybox\demo\3_s.jpg" />
+    <Content Include="frontend-assets\plugins\fancybox\demo\4_b.jpg" />
+    <Content Include="frontend-assets\plugins\fancybox\demo\4_s.jpg" />
+    <Content Include="frontend-assets\plugins\fancybox\demo\5_b.jpg" />
+    <Content Include="frontend-assets\plugins\fancybox\demo\5_s.jpg" />
+    <Content Include="frontend-assets\plugins\fancybox\demo\ajax.txt" />
+    <Content Include="frontend-assets\plugins\fancybox\demo\iframe.html" />
+    <Content Include="frontend-assets\plugins\fancybox\demo\index.html" />
+    <Content Include="frontend-assets\plugins\fancybox\lib\jquery-1.8.2.min.js" />
+    <Content Include="frontend-assets\plugins\fancybox\lib\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="frontend-assets\plugins\fancybox\README.txt" />
+    <Content Include="frontend-assets\plugins\fancybox\source\blank.gif" />
+    <Content Include="frontend-assets\plugins\fancybox\source\fancybox_loading.gif" />
+    <Content Include="frontend-assets\plugins\fancybox\source\fancybox_overlay.png" />
+    <Content Include="frontend-assets\plugins\fancybox\source\fancybox_sprite.png" />
+    <Content Include="frontend-assets\plugins\fancybox\source\helpers\fancybox_buttons.png" />
+    <Content Include="frontend-assets\plugins\fancybox\source\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="frontend-assets\plugins\fancybox\source\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="frontend-assets\plugins\fancybox\source\helpers\jquery.fancybox-media.js" />
+    <Content Include="frontend-assets\plugins\fancybox\source\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="frontend-assets\plugins\fancybox\source\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="frontend-assets\plugins\fancybox\source\jquery.fancybox.css" />
+    <Content Include="frontend-assets\plugins\fancybox\source\jquery.fancybox.js" />
+    <Content Include="frontend-assets\plugins\fancybox\source\jquery.fancybox.pack.js" />
+    <Content Include="frontend-assets\plugins\flot\examples\ajax\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\annotating\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-interacting\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-multiple\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\date.js" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\background.png" />
+    <Content Include="frontend-assets\plugins\flot\examples\basic-options\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\basic-usage\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\canvas\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\categories\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\examples.css" />
+    <Content Include="frontend-assets\plugins\flot\examples\image\hs-2004-27-a-large-web.jpg" />
+    <Content Include="frontend-assets\plugins\flot\examples\image\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\interacting\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\navigate\arrow-down.gif" />
+    <Content Include="frontend-assets\plugins\flot\examples\navigate\arrow-left.gif" />
+    <Content Include="frontend-assets\plugins\flot\examples\navigate\arrow-right.gif" />
+    <Content Include="frontend-assets\plugins\flot\examples\navigate\arrow-up.gif" />
+    <Content Include="frontend-assets\plugins\flot\examples\navigate\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\percentiles\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\realtime\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\resize\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\selection\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\series-errorbars\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\series-pie\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\series-toggle\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\series-types\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\shared\jquery-ui\jquery-ui.min.css" />
+    <Content Include="frontend-assets\plugins\flot\examples\shared\jquery-ui\jquery-ui.min.js" />
+    <Content Include="frontend-assets\plugins\flot\examples\stacking\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\symbols\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\threshold\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\tracking\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\visitors\index.html" />
+    <Content Include="frontend-assets\plugins\flot\examples\zooming\index.html" />
+    <Content Include="frontend-assets\plugins\flot\excanvas.js" />
+    <Content Include="frontend-assets\plugins\flot\excanvas.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.colorhelpers.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.colorhelpers.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.canvas.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.canvas.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.categories.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.categories.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.crosshair.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.errorbars.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.errorbars.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.fillbetween.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.image.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.image.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.navigate.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.navigate.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.pie.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.resize.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.selection.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.selection.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.stack.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.stack.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.symbol.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.threshold.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.threshold.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.time.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.flot.time.min.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.js" />
+    <Content Include="frontend-assets\plugins\flot\jquery.min.js" />
+    <Content Include="frontend-assets\plugins\flot\LICENSE.txt" />
+    <Content Include="frontend-assets\plugins\font-awesome\css\font-awesome.css" />
+    <Content Include="frontend-assets\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="frontend-assets\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\basic.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\context_menu.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\custom_controls.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\elevation_locations.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\elevation_routes.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\examples.css" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\fusion_tables.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\geocoding.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\geofences.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\geolocation.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\geometry.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\kml.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\layers.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\layers_places.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\map_events.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\map_types.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\markers.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\marker_clusterer.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\overlays.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\overlay_map_types.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\polygons.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\polylines.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\routes.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\routes_advanced.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\static.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\static_markers.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\static_polylines.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\styled_maps.html" />
+    <Content Include="frontend-assets\plugins\gmaps\examples\travel_route.html" />
+    <Content Include="frontend-assets\plugins\gmaps\gmaps.js" />
+    <Content Include="frontend-assets\plugins\gmaps\lib\gmaps.controls.js" />
+    <Content Include="frontend-assets\plugins\gmaps\lib\gmaps.core.js" />
+    <Content Include="frontend-assets\plugins\gmaps\lib\gmaps.events.js" />
+    <Content Include="frontend-assets\plugins\gmaps\lib\gmaps.geofences.js" />
+    <Content Include="frontend-assets\plugins\gmaps\lib\gmaps.geometry.js" />
+    <Content Include="frontend-assets\plugins\gmaps\lib\gmaps.layers.js" />
+    <Content Include="frontend-assets\plugins\gmaps\lib\gmaps.map_types.js" />
+    <Content Include="frontend-assets\plugins\gmaps\lib\gmaps.markers.js" />
+    <Content Include="frontend-assets\plugins\gmaps\lib\gmaps.native_extensions.js" />
+    <Content Include="frontend-assets\plugins\gmaps\lib\gmaps.overlays.js" />
+    <Content Include="frontend-assets\plugins\gmaps\lib\gmaps.routes.js" />
+    <Content Include="frontend-assets\plugins\gmaps\lib\gmaps.static.js" />
+    <Content Include="frontend-assets\plugins\gmaps\lib\gmaps.streetview.js" />
+    <Content Include="frontend-assets\plugins\gmaps\lib\gmaps.styles.js" />
+    <Content Include="frontend-assets\plugins\gmaps\lib\gmaps.utils.js" />
+    <Content Include="frontend-assets\plugins\gmaps\test\index.html" />
+    <Content Include="frontend-assets\plugins\gmaps\test\lib\jasmine-html.js" />
+    <Content Include="frontend-assets\plugins\gmaps\test\lib\jasmine.css" />
+    <Content Include="frontend-assets\plugins\gmaps\test\lib\jasmine.js" />
+    <Content Include="frontend-assets\plugins\gmaps\test\spec\EventSpec.js" />
+    <Content Include="frontend-assets\plugins\gmaps\test\spec\GeometrySpec.js" />
+    <Content Include="frontend-assets\plugins\gmaps\test\spec\LayerSpec.js" />
+    <Content Include="frontend-assets\plugins\gmaps\test\spec\MapSpec.js" />
+    <Content Include="frontend-assets\plugins\gmaps\test\spec\MarkerSpec.js" />
+    <Content Include="frontend-assets\plugins\gmaps\test\spec\OverlaySpec.js" />
+    <Content Include="frontend-assets\plugins\gmaps\test\spec\RouteSpec.js" />
+    <Content Include="frontend-assets\plugins\gmaps\test\spec\StreetViewSpec.js" />
+    <Content Include="frontend-assets\plugins\gmaps\test\spec\StyleSpec.js" />
+    <Content Include="frontend-assets\plugins\jquery-1.10.2.min.js" />
+    <Content Include="frontend-assets\plugins\jquery-migrate-1.2.1.min.js" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\allow-page-scroll.html" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\chaining.html" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\disable-fade-out.html" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\dynamic-content.html" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\height-width.html" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\index.html" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\libs\prettify\prettify.css" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\libs\prettify\prettify.js" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\mouse-wheel.html" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\multiple-elements.html" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\navigation.html" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\nested.html" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\programmatic-scrolling.html" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\rail.html" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\scroll-events.html" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\scrollbar.html" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\start-position.html" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\examples\style.css" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\jquery.slimscroll.js" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\jquery.slimscroll.min.js" />
+    <Content Include="frontend-assets\plugins\jquery.mixitup.min.js" />
+    <Content Include="frontend-assets\plugins\layerslider\css\blank.gif" />
+    <Content Include="frontend-assets\plugins\layerslider\css\layerslider.css" />
+    <Content Include="frontend-assets\plugins\layerslider\jQuery\jquery-easing-1.3.js" />
+    <Content Include="frontend-assets\plugins\layerslider\jQuery\jquery-transit-modified.js" />
+    <Content Include="frontend-assets\plugins\layerslider\jQuery\jquery.js" />
+    <Content Include="frontend-assets\plugins\layerslider\js\layerslider.kreaturamedia.jquery.js" />
+    <Content Include="frontend-assets\plugins\layerslider\js\layerslider.transitions.js" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlessdark3d\loading.gif" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlessdark3d\nothumb.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlessdark3d\shadow.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlessdark3d\skin.css" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlessdark3d\skin.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlessdark\loading.gif" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlessdark\nothumb.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlessdark\shadow.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlessdark\skin.css" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlessdark\skin.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlesslight3d\loading.gif" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlesslight3d\nothumb.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlesslight3d\shadow.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlesslight3d\skin.css" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlesslight3d\skin.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlesslight\loading.gif" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlesslight\nothumb.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlesslight\shadow.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlesslight\skin.css" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\borderlesslight\skin.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\carousel\loading.gif" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\carousel\nothumb.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\carousel\skin.css" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\carousel\skin.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\darkskin\loading.gif" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\darkskin\nothumb.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\darkskin\skin.css" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\darkskin\skin.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\defaultskin\loading.gif" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\defaultskin\nothumb.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\defaultskin\skin.css" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\defaultskin\skin.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\fullwidthdark\loading.gif" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\fullwidthdark\nothumb.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\fullwidthdark\skin.css" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\fullwidthdark\skin.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\fullwidth\loading.gif" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\fullwidth\nothumb.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\fullwidth\skin.css" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\fullwidth\skin.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\glass\loading.gif" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\glass\nothumb.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\glass\shadow.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\glass\skin.css" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\glass\skin.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\lightskin\loading.gif" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\lightskin\nothumb.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\lightskin\skin.css" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\lightskin\skin.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\minimal\loading.gif" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\minimal\nothumb.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\minimal\skin.css" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\minimal\skin.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\noskin\loading.gif" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\noskin\nothumb.png" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\noskin\skin.css" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\noskin\skin.png" />
+    <Content Include="frontend-assets\plugins\rateit\example\content\antenna-black.png" />
+    <Content Include="frontend-assets\plugins\rateit\example\content\antenna-red.png" />
+    <Content Include="frontend-assets\plugins\rateit\example\content\antenna-yellow.png" />
+    <Content Include="frontend-assets\plugins\rateit\example\content\antenna.css" />
+    <Content Include="frontend-assets\plugins\rateit\example\content\bigstars.css" />
+    <Content Include="frontend-assets\plugins\rateit\example\content\star-black32.png" />
+    <Content Include="frontend-assets\plugins\rateit\example\content\star-gold32.png" />
+    <Content Include="frontend-assets\plugins\rateit\example\content\star-red32.png" />
+    <Content Include="frontend-assets\plugins\rateit\example\content\star-white32.png" />
+    <Content Include="frontend-assets\plugins\rateit\example\content\star_2.gif" />
+    <Content Include="frontend-assets\plugins\rateit\example\content\star_3.gif" />
+    <Content Include="frontend-assets\plugins\rateit\example\content\star_4.gif" />
+    <Content Include="frontend-assets\plugins\rateit\example\example.htm" />
+    <Content Include="frontend-assets\plugins\rateit\example\rateit.aspx" />
+    <Content Include="frontend-assets\plugins\rateit\example\sh\shBrushCSharp.js" />
+    <Content Include="frontend-assets\plugins\rateit\example\sh\shBrushCss.js" />
+    <Content Include="frontend-assets\plugins\rateit\example\sh\shBrushJScript.js" />
+    <Content Include="frontend-assets\plugins\rateit\example\sh\shBrushXml.js" />
+    <Content Include="frontend-assets\plugins\rateit\example\sh\shCore.css" />
+    <Content Include="frontend-assets\plugins\rateit\example\sh\shCore.js" />
+    <Content Include="frontend-assets\plugins\rateit\example\sh\shCoreDefault.css" />
+    <Content Include="frontend-assets\plugins\rateit\src\delete.gif" />
+    <Content Include="frontend-assets\plugins\rateit\src\jquery.rateit.js" />
+    <Content Include="frontend-assets\plugins\rateit\src\jquery.rateit.min.js" />
+    <Content Include="frontend-assets\plugins\rateit\src\rateit.css" />
+    <Content Include="frontend-assets\plugins\rateit\src\star.gif" />
+    <Content Include="frontend-assets\plugins\respond.min.js" />
+    <Content Include="frontend-assets\plugins\uniform\css\uniform.default.css" />
+    <Content Include="frontend-assets\plugins\uniform\css\uniform.default.min.css" />
+    <Content Include="frontend-assets\plugins\uniform\images\bg-input-focus.png" />
+    <Content Include="frontend-assets\plugins\uniform\images\bg-input.png" />
+    <Content Include="frontend-assets\plugins\uniform\images\sprite.png" />
+    <Content Include="frontend-assets\plugins\uniform\images\sprite_original.png" />
+    <Content Include="frontend-assets\plugins\uniform\jquery.uniform.js" />
+    <Content Include="frontend-assets\plugins\uniform\jquery.uniform.min.js" />
+    <Content Include="frontend-assets\plugins\zoom\jquery.zoom.js" />
+    <Content Include="frontend-assets\plugins\zoom\jquery.zoom.min.js" />
+    <Content Include="frontend-assets\scripts\app.js" />
+    <Content Include="frontend-assets\scripts\checkout.js" />
+    <Content Include="frontend-assets\scripts\contact-us.js" />
+    <Content Include="frontend-assets\scripts\index.js" />
+    <Content Include="frontend-assets\temp\brands\canon.jpg" />
+    <Content Include="frontend-assets\temp\brands\esprit.jpg" />
+    <Content Include="frontend-assets\temp\brands\gap.jpg" />
+    <Content Include="frontend-assets\temp\brands\next.jpg" />
+    <Content Include="frontend-assets\temp\brands\puma.jpg" />
+    <Content Include="frontend-assets\temp\brands\zara.jpg" />
+    <Content Include="frontend-assets\temp\cart-img.jpg" />
+    <Content Include="frontend-assets\temp\img1.jpg" />
+    <Content Include="frontend-assets\temp\img3.jpg" />
+    <Content Include="frontend-assets\temp\index-sliders\slide1.jpg" />
+    <Content Include="frontend-assets\temp\index-sliders\slide2.jpg" />
+    <Content Include="frontend-assets\temp\index-sliders\slide3.jpg" />
+    <Content Include="frontend-assets\temp\product1.jpg" />
+    <Content Include="frontend-assets\temp\product1big.jpg" />
+    <Content Include="frontend-assets\temp\products\k1.jpg" />
+    <Content Include="frontend-assets\temp\products\k2.jpg" />
+    <Content Include="frontend-assets\temp\products\k3.jpg" />
+    <Content Include="frontend-assets\temp\products\k4.jpg" />
+    <Content Include="frontend-assets\temp\products\model1.jpg" />
+    <Content Include="frontend-assets\temp\products\model2.jpg" />
+    <Content Include="frontend-assets\temp\products\model3.jpg" />
+    <Content Include="frontend-assets\temp\products\model4.jpg" />
+    <Content Include="frontend-assets\temp\products\model5.jpg" />
+    <Content Include="frontend-assets\temp\products\model6.jpg" />
+    <Content Include="frontend-assets\temp\products\model7.jpg" />
+    <Content Include="frontend-assets\temp\products\p1.jpg" />
+    <Content Include="frontend-assets\temp\products\p2.jpg" />
+    <Content Include="frontend-assets\temp\products\p3.jpg" />
+    <Content Include="frontend-assets\temp\products\p4.jpg" />
+    <Content Include="frontend-assets\temp\products\p5.jpg" />
+    <Content Include="frontend-assets\temp\products\p6.jpg" />
+    <Content Include="frontend-assets\temp\products\p7.jpg" />
+    <Content Include="frontend-assets\temp\sliders\slide1.jpg" />
+    <Content Include="frontend-assets\temp\sliders\slide1\bg.jpg" />
+    <Content Include="frontend-assets\temp\sliders\slide1\mini-text.png" />
+    <Content Include="frontend-assets\temp\sliders\slide1\title.png" />
+    <Content Include="frontend-assets\temp\sliders\slide2\bg.jpg" />
+    <Content Include="frontend-assets\temp\sliders\slide2\btn.png" />
+    <Content Include="frontend-assets\temp\sliders\slide2\price.png" />
+    <Content Include="frontend-assets\temp\sliders\slide2\title.png" />
+    <Content Include="frontend-assets\temp\sliders\slide3\bg.jpg" />
+    <Content Include="frontend-assets\temp\sliders\slide3\buy-it-now.png" />
+    <Content Include="frontend-assets\temp\sliders\slide3\price.png" />
+    <Content Include="frontend-assets\temp\sliders\slide3\title.png" />
+    <Content Include="frontend-assets\temp\sliders\slide4\bg.jpg" />
+    <Content Include="frontend-assets\temp\sliders\slide4\logo.png" />
+    <Content Include="frontend-assets\temp\sliders\slide4\slogan.png" />
+    <Content Include="frontend-assets\temp\sliders\slide5\bg.jpg" />
+    <Content Include="frontend-assets\temp\sliders\slide5\buy.png" />
+    <Content Include="frontend-assets\temp\sliders\slide5\price.png" />
+    <Content Include="frontend-assets\temp\sliders\slide5\title.png" />
+    <Content Include="frontend-assets\temp\title-bg\1.jpg" />
+    <Content Include="frontend-assets\temp\title-bg\man.jpg" />
+    <Content Include="frontend-assets\temp\title-bg\woman.jpg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="frontend-assets\plugins\flot\API.md" />
+    <Content Include="frontend-assets\plugins\flot\CONTRIBUTING.md" />
+    <Content Include="frontend-assets\plugins\flot\examples\.DS_Store" />
+    <Content Include="frontend-assets\plugins\flot\examples\ajax\data-eu-gdp-growth-1.json" />
+    <Content Include="frontend-assets\plugins\flot\examples\ajax\data-eu-gdp-growth-2.json" />
+    <Content Include="frontend-assets\plugins\flot\examples\ajax\data-eu-gdp-growth-3.json" />
+    <Content Include="frontend-assets\plugins\flot\examples\ajax\data-eu-gdp-growth-4.json" />
+    <Content Include="frontend-assets\plugins\flot\examples\ajax\data-eu-gdp-growth-5.json" />
+    <Content Include="frontend-assets\plugins\flot\examples\ajax\data-eu-gdp-growth.json" />
+    <Content Include="frontend-assets\plugins\flot\examples\ajax\data-japan-gdp-growth.json" />
+    <Content Include="frontend-assets\plugins\flot\examples\ajax\data-usa-gdp-growth.json" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\africa" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\antarctica" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\asia" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\australasia" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\backward" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\etcetera" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\europe" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\factory" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\iso3166.tab" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\leapseconds" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\northamerica" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\pacificnew" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\solar87" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\solar88" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\solar89" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\southamerica" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\systemv" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\yearistype.sh" />
+    <Content Include="frontend-assets\plugins\flot\examples\axes-time-zones\tz\zone.tab" />
+    <Content Include="frontend-assets\plugins\flot\FAQ.md" />
+    <Content Include="frontend-assets\plugins\flot\Makefile" />
+    <Content Include="frontend-assets\plugins\flot\NEWS.md" />
+    <Content Include="frontend-assets\plugins\flot\PLUGINS.md" />
+    <Content Include="frontend-assets\plugins\flot\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Backend\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Frontend\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PollExam\PollExam.csproj">
+      <Project>{B68FC2D0-CB1E-4305-A4B9-69E12640EC28}</Project>
+      <Name>PollExam</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Frontend.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Backend.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="frontend-assets\img\icons\.DS_Store" />
+    <Content Include="frontend-assets\plugins\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="frontend-assets\plugins\bootstrap\css\bootstrap.css.map" />
+    <Content Include="frontend-assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="frontend-assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="frontend-assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="frontend-assets\plugins\fancybox\.gitattributes" />
+    <Content Include="frontend-assets\plugins\fancybox\CHANGELOG.md" />
+    <Content Include="frontend-assets\plugins\fancybox\README.md" />
+    <Content Include="frontend-assets\plugins\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="frontend-assets\plugins\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="frontend-assets\plugins\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="frontend-assets\plugins\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="frontend-assets\plugins\font-awesome\less\bordered-pulled.less" />
+    <Content Include="frontend-assets\plugins\font-awesome\less\core.less" />
+    <Content Include="frontend-assets\plugins\font-awesome\less\fixed-width.less" />
+    <Content Include="frontend-assets\plugins\font-awesome\less\font-awesome.less" />
+    <Content Include="frontend-assets\plugins\font-awesome\less\icons.less" />
+    <Content Include="frontend-assets\plugins\font-awesome\less\larger.less" />
+    <Content Include="frontend-assets\plugins\font-awesome\less\list.less" />
+    <Content Include="frontend-assets\plugins\font-awesome\less\mixins.less" />
+    <Content Include="frontend-assets\plugins\font-awesome\less\path.less" />
+    <Content Include="frontend-assets\plugins\font-awesome\less\rotated-flipped.less" />
+    <Content Include="frontend-assets\plugins\font-awesome\less\spinning.less" />
+    <Content Include="frontend-assets\plugins\font-awesome\less\stacked.less" />
+    <Content Include="frontend-assets\plugins\font-awesome\less\variables.less" />
+    <Content Include="frontend-assets\plugins\font-awesome\scss\font-awesome.scss" />
+    <Content Include="frontend-assets\plugins\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="frontend-assets\plugins\font-awesome\scss\_core.scss" />
+    <Content Include="frontend-assets\plugins\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="frontend-assets\plugins\font-awesome\scss\_icons.scss" />
+    <Content Include="frontend-assets\plugins\font-awesome\scss\_larger.scss" />
+    <Content Include="frontend-assets\plugins\font-awesome\scss\_list.scss" />
+    <Content Include="frontend-assets\plugins\font-awesome\scss\_mixins.scss" />
+    <Content Include="frontend-assets\plugins\font-awesome\scss\_path.scss" />
+    <Content Include="frontend-assets\plugins\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="frontend-assets\plugins\font-awesome\scss\_spinning.scss" />
+    <Content Include="frontend-assets\plugins\font-awesome\scss\_stacked.scss" />
+    <Content Include="frontend-assets\plugins\font-awesome\scss\_variables.scss" />
+    <Content Include="frontend-assets\plugins\gmaps\CONTRIBUTING.md" />
+    <Content Include="frontend-assets\plugins\gmaps\README.md" />
+    <Content Include="frontend-assets\plugins\jquery-1.10.2.min.map" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\README.md" />
+    <Content Include="frontend-assets\plugins\jQuery-slimScroll\slimScroll.jquery.json" />
+    <Content Include="frontend-assets\plugins\layerslider\css\.DS_Store" />
+    <Content Include="frontend-assets\plugins\layerslider\jQuery\.DS_Store" />
+    <Content Include="frontend-assets\plugins\layerslider\js\.DS_Store" />
+    <Content Include="frontend-assets\plugins\layerslider\skins\.DS_Store" />
+    <Content Include="frontend-assets\plugins\rateit\.DS_Store" />
+    <Content Include="frontend-assets\plugins\rateit\src\jquery.rateit.min.js.map" />
+    <Content Include="frontend-assets\plugins\uniform\.DS_Store" />
+    <Content Include="frontend-assets\plugins\uniform\css\uniform.default.scss" />
+    <Content Include="frontend-assets\plugins\uniform\README.textile" />
+    <Content Include="frontend-assets\temp\.DS_Store" />
+    <Content Include="frontend-assets\temp\sliders\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="backend-assets\plugins\flot\examples\gauge\" />
+    <Folder Include="frontend-assets\plugins\flot\examples\gauge\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="backend-assets\plugins\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="backend-assets\plugins\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="backend-assets\plugins\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="backend-assets\plugins\font-awesome\less\bordered-pulled.less" />
+    <Content Include="backend-assets\plugins\font-awesome\less\core.less" />
+    <Content Include="backend-assets\plugins\font-awesome\less\fixed-width.less" />
+    <Content Include="backend-assets\plugins\font-awesome\less\font-awesome.less" />
+    <Content Include="backend-assets\plugins\font-awesome\less\icons.less" />
+    <Content Include="backend-assets\plugins\font-awesome\less\larger.less" />
+    <Content Include="backend-assets\plugins\font-awesome\less\list.less" />
+    <Content Include="backend-assets\plugins\font-awesome\less\mixins.less" />
+    <Content Include="backend-assets\plugins\font-awesome\less\path.less" />
+    <Content Include="backend-assets\plugins\font-awesome\less\rotated-flipped.less" />
+    <Content Include="backend-assets\plugins\font-awesome\less\spinning.less" />
+    <Content Include="backend-assets\plugins\font-awesome\less\stacked.less" />
+    <Content Include="backend-assets\plugins\font-awesome\less\variables.less" />
+    <Content Include="backend-assets\plugins\font-awesome\scss\font-awesome.scss" />
+    <Content Include="backend-assets\plugins\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="backend-assets\plugins\font-awesome\scss\_core.scss" />
+    <Content Include="backend-assets\plugins\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="backend-assets\plugins\font-awesome\scss\_icons.scss" />
+    <Content Include="backend-assets\plugins\font-awesome\scss\_larger.scss" />
+    <Content Include="backend-assets\plugins\font-awesome\scss\_list.scss" />
+    <Content Include="backend-assets\plugins\font-awesome\scss\_mixins.scss" />
+    <Content Include="backend-assets\plugins\font-awesome\scss\_path.scss" />
+    <Content Include="backend-assets\plugins\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="backend-assets\plugins\font-awesome\scss\_spinning.scss" />
+    <Content Include="backend-assets\plugins\font-awesome\scss\_stacked.scss" />
+    <Content Include="backend-assets\plugins\font-awesome\scss\_variables.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\bootstrap\css\bootstrap.css.map" />
+    <Content Include="backend-assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="backend-assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="backend-assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\uniform\css\uniform.default.scss" />
+    <Content Include="backend-assets\plugins\uniform\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\img\blog\Thumbs.db" />
+    <Content Include="backend-assets\img\pages\Thumbs.db" />
+    <Content Include="backend-assets\img\social\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\bootstrap-hover-dropdown\bower.json" />
+    <Content Include="backend-assets\plugins\bootstrap-hover-dropdown\LICENSE" />
+    <Content Include="backend-assets\plugins\bootstrap-hover-dropdown\README.md" />
+    <Content Include="backend-assets\plugins\jquery-slimscroll\README.md" />
+    <Content Include="backend-assets\plugins\jquery-slimscroll\slimScroll.jquery.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\API.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\CONTRIBUTING.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\ajax\data-eu-gdp-growth-1.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\ajax\data-eu-gdp-growth-2.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\ajax\data-eu-gdp-growth-3.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\ajax\data-eu-gdp-growth-4.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\ajax\data-eu-gdp-growth-5.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\ajax\data-eu-gdp-growth.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\ajax\data-japan-gdp-growth.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\ajax\data-usa-gdp-growth.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\africa" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\antarctica" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\asia" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\australasia" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\backward" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\etcetera" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\europe" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\factory" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\iso3166.tab" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\leapseconds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\northamerica" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\pacificnew" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\solar87" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\solar88" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\solar89" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\southamerica" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\systemv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\yearistype.sh" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\examples\axes-time-zones\tz\zone.tab" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\FAQ.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\Makefile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\NEWS.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\PLUGINS.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backend-assets\plugins\flot\README.md" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49690</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/PollExam.Web</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
